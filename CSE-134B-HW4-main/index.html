@@ -148,6 +148,40 @@ h6 {
   from {background-color: pink;}
   to {background-color: magenta;}
 }
+
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: pink;
+  color: black;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: red;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+	
 </style>
   <h1><b>Charlotte Kim's Portfolio</b></h1>
   <h2>
@@ -171,6 +205,23 @@ h6 {
     
    <h6><b>Contact</b></h6> 
         <h7><span style="color:pink;font-weight:bold">Email: charlottehkim@gmail.com</span> <br> <span style="color:pink;font-weight:bold">Phone Number: 661-673-3588</span></h7>
+   
+   <h8>Contact Form</h8>
+
+<div class="container">
+  <form action="/httpbin.org">
+    <label for="fname">Your Name</label>
+    <input type="text" name="fullname" id="fullname">
+
+    <label for="email">Email</label>
+    <input type = "text" name="email" id="email">
+
+    <label for="subject">Comments</label>
+    <textarea id="subject" name="subject" placeholder="Write message here..." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
 
     
     <hr>
