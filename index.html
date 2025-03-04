@@ -37,6 +37,67 @@
 
   console.log(comments.checkValidity());
 
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("Contact Form");
+    const errMessage = document.querySelector("#error-message");
+    const comment = document.querySelector("#comments");
+    const counter = document.querySelector("#char-counter");
+    const max = commentField.getAttribute("maxlength");
+    let form_errors = [];
+
+    form.addEventListener("input", (event) => {
+        const character = event.character;
+        if (character.dataset.pattern) {
+            const match = new RegExp(character.dataset.pattern);
+            if (!match.test(character.value)) {
+                flashField(character, "Illegal character entered!");
+            }
+        }
+    });
+
+    comment.addEventListener("input", () => {
+        const remainder = max - comment.value.length;
+        counter.textContent = remainder + 'characters remaining';
+        
+        if (remainder <= 10) {
+            counter.style.color = "red";
+        } else {
+            counter.style.color = "black";
+        }
+    });
+
+    form.addEventListener("submit", (event) => {
+        form_errors = [];
+        let valid = true;
+        
+        form.querySelectorAll("input, textarea").forEach((field) => {
+            if (!field.checkValidity()) {
+                valid = false;
+                form_errors.push({
+                    field: field.name,
+                    message: field.validationMessage
+                });
+                flashField(field, field.validationMessage);
+            }
+        });
+
+        if (!valid) {
+            event.preventDefault();
+            document.querySelector("#form-errors").value = JSON.stringify(form_errors);
+        }
+    });
+
+    function flashField(field, message) {
+        field.classList.add("error");
+        errMessage.textContent = message;
+        setTimeout(() => {
+            field.classList.remove("error");
+            errMessage.textContent = "";
+        }, 1000);
+    }
+});
+
+
 
 </script>
 </head>
@@ -181,7 +242,7 @@ input[required] {
 }
 
 textarea {
-  maxlength: 200;
+  maxlength: 1000;
   width: device-width;
   padding: 14px;
   border: 2px solid #ccc;
