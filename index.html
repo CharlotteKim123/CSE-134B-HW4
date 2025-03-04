@@ -173,7 +173,7 @@ h6 {
   to {background-color: magenta;}
 }
 
-input[required], textarea {
+input[required] {
   width: device-width;
   padding: 14px;
   border: 2px solid #ccc;
@@ -181,6 +181,18 @@ input[required], textarea {
   margin-bottom: 14px;
   display: flex;
   flex-direction: column;
+}
+
+textarea {
+  maxlength: 200;
+  width: device-width;
+  padding: 14px;
+  border: 2px solid #ccc;
+  margin-top: 8px;
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  resize: vertical;
   resize: horizontal;
 }
 
@@ -238,7 +250,7 @@ input[type=submit]:hover {
     <input type="text" name="fullname" id="fullname" required>
 
     <label for="email">Email</label>
-    <input type = "text" name="email" id="email" required>
+    <input type = "email" name="email" id="email" required>
 
     <label for="comments">Comments</label>
     <textarea id="comments" name="comments" placeholder="Write message here..." style="height:200px" required></textarea>
