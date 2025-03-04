@@ -233,15 +233,12 @@ input[type=submit]:hover {
    <h6>Contact Form</h6>
 
 <div class="container">
-  <form action="https://httpbin.org/" method=POST>
-    <label for="fullname">Your Name</label>
+  <form action="https://httpbin.org/">
+    <label for="fullname">Your Full Name</label>
     <input type="text" name="fullname" id="fullname" required>
 
     <label for="email">Email</label>
     <input type = "text" name="email" id="email" required>
-    <output>id="emailError"</output>
-    <output>id="emailInfo"</output>
-    
 
     <label for="comments">Comments</label>
     <textarea id="comments" name="comments" placeholder="Write message here..." style="height:200px" required></textarea>
@@ -249,6 +246,9 @@ input[type=submit]:hover {
     <input type="submit" value="Submit">
 	  
     <input type="hidden" name="possible_bot" value=true>
+
+    <output>id="emailError"</output>
+    <output>id="emailInfo"</output>
     
   </form>
 </div>
