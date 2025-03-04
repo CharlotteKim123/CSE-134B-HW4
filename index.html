@@ -195,15 +195,23 @@ input[type=submit]:hover {
 	     <source media="(min-width:650px)" srcset="Screenshot 2025-02-16.png">
 	     <img src="/images/Screenshot 2025-02-16.png" alt="emotion detector" width= device-width height=300px>
         </picture>
-	<p>The emotion detecter allows one to see the overall review of a product (i.e. Amazon product).
+	<p>The Emotion Detecter: This website allows one to see the overall review of a product (i.e. Amazon product).
 	All you have to do is input the link to the product into the given text box. The website will then
 	return the product's overall word cloud, positive word cloud, negative word cloud, a bar graph and a circle
 	graph showing the positive vs negative reviews, and the overall review of the product.</p>
+
+	<picture>
+	     <source media="(min-width:650px)" srcset="Life.png">
+	     <img src="/images/Life.png" alt="life" width= device-width height=300px>
+        </picture>
+	<p>The Game of Life: This program creates a new board by reading a file and setting the rows and columns of the board
+	on the file, where the first line is the number of rows, and the second line being the number of columns. We also
+	simulate the "steps" generations for each board.</p>
    
    <h6>Contact Form</h6>
 
 <div class="container">
-  <form action="/httpbin.org">
+  <form action="https://httpbin.org/">
     <label for="fullname">Your Name</label>
     <input type="text" name="fullname" id="fullname">
 
@@ -214,6 +222,8 @@ input[type=submit]:hover {
     <textarea id="subject" name="subject" placeholder="Write message here..." style="height:200px"></textarea>
 
     <input type="submit" value="Submit">
+	  
+    <input type="hidden" name="possible_bot" value=true>
   </form>
 </div>
 
