@@ -18,6 +18,30 @@
     customElements.define('hello-world', HelloWorld);
 		console.log("Hello World!");
 	</script>
+<script>
+
+  const input = document.getElementById("email");
+
+  const emailInfo = document.getElementById("email");
+
+  const emailError = document.getElementById("emailError");
+
+
+  input.addEventListener("input", () => {
+
+    if (input.value === "") {
+
+      emailError.textContent = "Please enter an email.";
+
+    } else {
+
+      emailError.textContent = ""; // Clear error message
+      return emailInfo;
+    }
+
+  });
+
+</script>
 </head>
 
 <body>
@@ -215,6 +239,9 @@ input[type=submit]:hover {
 
     <label for="email">Email</label>
     <input type = "text" name="email" id="email" required>
+    <output>id="emailError"</output>
+    <output>id="emailInfo"</output>
+    
 
     <label for="comments">Comments</label>
     <textarea id="comments" name="comments" placeholder="Write message here..." style="height:200px" required></textarea>
@@ -222,6 +249,7 @@ input[type=submit]:hover {
     <input type="submit" value="Submit">
 	  
     <input type="hidden" name="possible_bot" value=true>
+    
   </form>
 </div>
 
