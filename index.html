@@ -9,15 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Charlotte Kim's Portfolio</title>
 	<link href="computercode.jpeg" rel="icon" />
-	<script>
-    class HTML extends HTMLElement {
-      connectedCallback() {
-        this.innerHTML = `<h1>Hello, World!</h1>`;
-      }
-    }
-    customElements.define('hello-world', HelloWorld);
-		console.log("Hello World!");
-	</script>
+	
 <script>
 
   const input = document.getElementById("email");
@@ -222,6 +214,11 @@ input[type=submit]:hover {
   background-color: black;
   color: white;
 }
+
+.dark-mode > .container {
+  background-color: black;
+  color: white;
+}
 	
 </style>
   <h1><b>Charlotte Kim's Portfolio</b></h1>
@@ -244,13 +241,6 @@ input[type=submit]:hover {
 	return the product's overall word cloud, positive word cloud, negative word cloud, a bar graph and a circle
 	graph showing the positive vs negative reviews, and the overall review of the product.</p>
 
-	<picture>
-	     <source media="(min-width:650px)" srcset="Life.png">
-	     <img src="/images/Life.png" alt="life" width= device-width height=300px>
-        </picture>
-	<p>The Game of Life: This program creates a new board by reading a file and setting the rows and columns of the board
-	on the file, where the first line is the number of rows, and the second line being the number of columns. We also
-	simulate the "steps" generations for each board.</p>
    
    <h6>Contact Form</h6>
 
