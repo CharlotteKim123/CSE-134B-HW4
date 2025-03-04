@@ -149,12 +149,14 @@ h6 {
   to {background-color: magenta;}
 }
 
-input[type=text], textarea {
+input[required], textarea {
   width: device-width;
   padding: 14px;
   border: 2px solid #ccc;
   margin-top: 8px;
   margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
   resize: vertical;
 }
 
@@ -168,11 +170,6 @@ input[type=submit] {
 
 input[type=submit]:hover {
   background-color: magenta;
-}
-
-input[required] {
-   display: flex;
-   flex-direction: column;
 }
 	
 .container {
