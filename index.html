@@ -68,21 +68,20 @@
 
     form.addEventListener("submit", (event) => {
         form_errors = [];
-        let valid = true;
+        let validity = true;
         
         form.querySelectorAll("input, textarea").forEach((field) => {
             if (!field.checkValidity()) {
-                valid = false;
+                validity = false;
                 form_errors.push({
                     field: field.name,
-                    message: field.validationMessage
+                    message: field.errMessage
                 });
                 flashField(field, field.validationMessage);
             }
         });
 
-        if (!valid) {
-            event.preventDefault();
+        if (!validity) {
             document.querySelector("#form-errors").value = JSON.stringify(form_errors);
         }
     });
